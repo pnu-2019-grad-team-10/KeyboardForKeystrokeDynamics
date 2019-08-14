@@ -4,32 +4,21 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-feature android:required="false" android:name="android.hardware.touchscreen"/>
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <service
-            android:name=".MyInputMethodService"
-            android:label="CustomKeyboard"
+    <application android:label="@string/ime_name"
+        android:icon="@drawable/ic_launcher"
+        android:allowBackup="false">
+        <service android:name="SoftKeyboard"
             android:permission="android.permission.BIND_INPUT_METHOD">
-            <meta-data android:name="android.view.im" android:resource="@xml/method"/>
             <intent-filter>
-                <action android:name="android.view.InputMethod"/>
-            </intent-filter>
-        </service>
-
-
-        <activity android:name=".MainActivity">
-            <intent-filter>
+                <action android:name="android.view.InputMethod" />
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent/action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+            <meta-data android:name="android.view.im" android:resource="@xml/method" />
+        </service>
     </application>
 
 </manifest>

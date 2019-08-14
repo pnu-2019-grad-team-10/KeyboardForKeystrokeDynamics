@@ -9,4 +9,8 @@
     <color name="keyboardPressed">#95A5A6</color>
     <color name="keyboardText">#000000</color>
     <color name="keyboardPreview">#5D5D5D</color>
+    <color name="candidate_normal">#FF000000</color>
+    <color name="candidate_recommended">#FFE35900</color>
+    <color name="candidate_other">#ff808080</color>
+    <color name="candidate_background">#bbffffff</color>
 </resources>
