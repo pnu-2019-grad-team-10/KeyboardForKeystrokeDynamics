@@ -87,6 +87,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_firestore_17_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_firestore_17_0_2_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_protolite_well_known_types_15_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_protolite_well_known_types_15_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/keyboardforkeystrokedynamics/SoftKeyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/keyboardforkeystrokedynamics/SoftKeyboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/korean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/korean.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/korean_shifted.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/korean_shifted.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" afterDir="false" />
@@ -108,20 +109,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/keys_layout.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/korean.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/method.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -149,11 +136,40 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/keyboardforkeystrokedynamics/SoftKeyboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="767" column="10" lean-forward="true" selection-start-line="767" selection-start-column="10" selection-end-line="767" selection-end-column="10" />
+            <state relative-caret-position="302">
+              <caret line="193" column="20" selection-start-line="193" selection-start-column="20" selection-end-line="193" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4501#4502#0" expanded="true" />
+                <element signature="e#4569#4570#0" expanded="true" />
+                <element signature="e#44306#44307#0" expanded="true" />
+                <element signature="e#45659#45660#0" expanded="true" />
+                <element signature="e#45719#45720#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/2019-08-14-07-34-17LOG.TXT">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-35" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/2019-08-14-07-35-14LOG.TXT">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/2019-08-14-05-50-37LOG.TXT">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -161,14 +177,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/symbols.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-741" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/symbols_shift.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-513" />
+            <state relative-caret-position="1558">
+              <caret line="82" column="81" selection-start-line="82" selection-start-column="81" selection-end-line="83" selection-end-column="103" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -181,11 +192,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -193,7 +199,12 @@
       <find>onCreate</find>
       <find>startService</find>
       <find>halbae</find>
+      <find>mNoKorean</find>
       <find>onKey(</find>
+      <find>Shifted</find>
+      <find>saveKeyLog</find>
+      <find>currentKeyboard</find>
+      <find>saveKey</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -215,18 +226,18 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/keyboardforkeystrokedynamics/LatinKeyboardView.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/input.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/keyboardforkeystrokedynamics/SoftKeyboard.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/korean.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/korean_shifted.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/keyboardforkeystrokedynamics/SoftKeyboard.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="200" />
-    <option name="y" value="69" />
-    <option name="width" value="1312" />
-    <option name="height" value="813" />
+    <option name="x" value="1672" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -235,43 +246,7 @@
     </navigator>
     <panes>
       <pane id="ProjectPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="KeyboardForKeystrokeDynamics" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="KeyboardForKeystrokeDynamics" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="KeyboardForKeystrokeDynamics" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="keyboardforkeystrokedynamics" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KeyboardForKeystrokeDynamics" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="KeyboardForKeystrokeDynamics" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="xml" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="KeyboardForKeystrokeDynamics" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -380,8 +355,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="1672" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" />
       <window_info id="Image Layers" order="1" />
@@ -393,11 +367,11 @@
       <window_info content_ui="combo" id="Project" order="7" weight="0.3294621" />
       <window_info id="Captures" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Logcat" order="0" sideWeight="0.4944988" visible="true" weight="0.32847533" />
-      <window_info anchor="bottom" id="TODO" order="1" sideWeight="0.49946696" weight="0.329718" />
+      <window_info anchor="bottom" id="TODO" order="1" sideWeight="0.49946696" weight="0.3295964" />
       <window_info anchor="bottom" id="Debug" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4968017" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5055012" side_tool="true" visible="true" weight="0.32847533" />
-      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49733475" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4968017" weight="0.3295964" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="4" sideWeight="0.5055012" side_tool="true" visible="true" weight="0.32847533" />
+      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49733475" weight="0.3295964" />
       <window_info anchor="bottom" id="Build" order="6" sideWeight="0.52139366" weight="0.32847533" />
       <window_info anchor="bottom" id="Android Profiler" order="7" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4989339" weight="0.329718" />
@@ -407,7 +381,7 @@
       <window_info anchor="right" id="Gradle" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Device File Explorer" order="4" sideWeight="0.5008347" side_tool="true" weight="0.3294621" />
+      <window_info anchor="right" id="Device File Explorer" order="4" sideWeight="0.5008347" side_tool="true" visible="true" weight="0.3294621" />
       <window_info anchor="right" id="Preview" order="5" sideWeight="0.49916527" weight="0.3294621" />
     </layout>
   </component>
@@ -570,20 +544,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/symbols.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-741" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/symbols_shift.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-513" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/2019-08-14-05-46-00LOG.TXT">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/LOG.TXT">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-947" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/2019-08-14-05-50-31LOG.TXT">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/2019-08-14-05-47-01LOG.TXT">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/symbols_shift.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-570" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/symbols.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1558">
+          <caret line="82" column="81" selection-start-line="82" selection-start-column="81" selection-end-line="83" selection-end-column="103" />
         </state>
       </provider>
     </entry>
@@ -594,12 +588,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/keyboardforkeystrokedynamics/SoftKeyboard.java">
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/2019-08-14-05-50-37LOG.TXT">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="767" column="10" lean-forward="true" selection-start-line="767" selection-start-column="10" selection-end-line="767" selection-end-column="10" />
+        <state relative-caret-position="95">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/keyboardforkeystrokedynamics/SoftKeyboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="193" column="20" selection-start-line="193" selection-start-column="20" selection-end-line="193" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4501#4502#0" expanded="true" />
+            <element signature="e#4569#4570#0" expanded="true" />
+            <element signature="e#44306#44307#0" expanded="true" />
+            <element signature="e#45659#45660#0" expanded="true" />
+            <element signature="e#45719#45720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/2019-08-14-07-34-17LOG.TXT">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-35" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/storage/emulated/0/LOG/2019-08-14-07-35-14LOG.TXT">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

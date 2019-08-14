@@ -35,6 +35,7 @@ import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -116,35 +117,86 @@ public class SoftKeyboard extends InputMethodService
     
     private KoreanAutomata kauto;
     private boolean mNoKorean = false;
+
+    private File file = null;
+    private BufferedWriter bfw = null;
     
     /**
      * Main initialization of the input method component.  Be sure to call
      * to super class.
      */
+    private void showMsg(String msg)
+    {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    private void handleLogFile() {
+        if(file == null) {
+            showMsg("Logging Start");
+            curTime = System.currentTimeMillis();
+            SimpleDateFormat dayTime = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+            String dateDT = dayTime.format(new Date(curTime));
+            String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/LOG/";
+            file = new File(dirPath);
+            file.mkdirs();
+            file = new File(dirPath + dateDT + "LOG.TXT");
+            try {
+                bfw = new BufferedWriter(new FileWriter(file,true));
+            } catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            try {
+                bfw.close();
+            } catch(IOException e) {
+                e.printStackTrace();
+            }
+            file = null;
+            showMsg("Logging Ended");
+        }
+    }
 
     private void saveKeyLog(int primaryCode, int type) {
+        if(mInputView == null) {
+            return;
+        }
+        String KEYBOARD_TYPE = "";
+        Keyboard currentKeyboard = mInputView.getKeyboard();
+        if (currentKeyboard == mQwertyKeyboard) {
+            // Alphabet keyboard
+            KEYBOARD_TYPE = "ENG";
+        }
+        // add Korean Keyboards
+        else if (currentKeyboard == mKoreanKeyboard)
+        {
+            // Log.v(TAG,"handleShift -- shift on Korean Keyboard");
+            KEYBOARD_TYPE = "KOR";
+        }
+        else if (currentKeyboard == mKoreanShiftedKeyboard)
+        {
+            KEYBOARD_TYPE = "KSH";
+        }
+        else {
+            return;
+        }
         curTime = System.currentTimeMillis();
         SimpleDateFormat dayTime = new SimpleDateFormat("yyyy:MM:dd:HH:mm:ss:SSS");
         String dateDT = dayTime.format(new Date(curTime));
 
-        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/LOG/";
-        File file = new File(dirPath);
-        file.mkdirs();
-        file = new File(dirPath+"LOG.TXT");
         try {
-            BufferedWriter bfw = new BufferedWriter(new FileWriter(file,true));
             String res = "" ;
             res += dateDT + " ";
-            res += Integer.toString(primaryCode);
+            res += primaryCode + " ";
+            res += KEYBOARD_TYPE + " ";
             if(type == 0) {
                 res +=  "P";
             } else {
-                res += " R";
+                res += "R";
             }
             bfw.write(res);
             bfw.newLine();
             bfw.flush();
-            bfw.close();
         } catch(IOException e) {
             e.printStackTrace();
         } catch(Exception e) {
@@ -712,18 +764,20 @@ public class SoftKeyboard extends InputMethodService
     // Implementation of KeyboardViewListener
 
     public void onKey(int primaryCode, int[] keyCodes) {
-    	 // Log.v(TAG, "onKey - primaryCode = " + primaryCode);
-    	if (isWordSeparator(primaryCode)) {
-    		 // Log.v(TAG, " -- separator = [" + (char) primaryCode + "]");
+        // Log.v(TAG, "onKey - primaryCode = " + primaryCode);
+        if (isWordSeparator(primaryCode)) {
+            // Log.v(TAG, " -- separator = [" + (char) primaryCode + "]");
             // Handle separator
-        	if (mComposing.length() > 0) {
+            if (mComposing.length() > 0) {
                 commitTyped(getCurrentInputConnection());
             }
-        	if (kauto.IsKoreanMode())
-        		kauto.FinishAutomataWithoutInput();
-        	sendKey(primaryCode);
-    		if (mInputView != null)
-    			updateShiftKeyState(getCurrentInputEditorInfo());
+            if (kauto.IsKoreanMode())
+                kauto.FinishAutomataWithoutInput();
+            sendKey(primaryCode);
+            if (mInputView != null)
+                updateShiftKeyState(getCurrentInputEditorInfo());
+        } else if(primaryCode == -9) {
+            handleLogFile();
         } else if (primaryCode == Keyboard.KEYCODE_DELETE) {
             handleBackspace();
         } else if (primaryCode == Keyboard.KEYCODE_SHIFT) {
@@ -1139,10 +1193,14 @@ public class SoftKeyboard extends InputMethodService
     }
     
     public void onPress(int primaryCode) {
-        saveKeyLog(primaryCode, 0);
+        if(file != null) {
+            saveKeyLog(primaryCode, 0);
+        }
     }
     
     public void onRelease(int primaryCode) {
-        saveKeyLog(primaryCode, 1);
+        if(file != null) {
+            saveKeyLog(primaryCode, 1);
+        }
     }
 }
